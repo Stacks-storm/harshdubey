@@ -1,0 +1,16 @@
+---
+name: Sample
+description: "Rule which sends an email when an email from johndoe@gmail.com is received"
+pack: email
+enabled: true
+trigger:
+  type: email.imap.message
+  parameters: {}
+criteria:
+  trigger.subject:
+    pattern: vm create
+    type: contains
+action:
+  ref: core.local
+  parameters:
+    cmd: echo hi  
